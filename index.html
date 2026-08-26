@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#15004f" />
+  <meta name="description" content="Official IMC Esports Club member verification." />
+  <title>IMC Esports Club | Member Verification</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="verify-card">
+      <div class="topbar">
+        <div class="club-name">IMC ESPORTS CLUB</div>
+        <span id="statusBadge" class="badge checking">CHECKING</span>
+      </div>
+
+      <div class="hero">
+        <img
+          src="assets/membership-verification.jpg"
+          alt="IMC Esports Club official membership verification"
+          class="certificate"
+        />
+      </div>
+
+      <section class="details">
+        <p class="eyebrow">OFFICIAL MEMBER VERIFICATION</p>
+        <h1 id="title">Checking Membership...</h1>
+
+        <div class="grid">
+          <div class="field">
+            <span>Member Name</span>
+            <strong id="memberName">—</strong>
+          </div>
+          <div class="field">
+            <span>Member ID</span>
+            <strong id="memberId">—</strong>
+          </div>
+          <div class="field">
+            <span>Role</span>
+            <strong id="memberRole">—</strong>
+          </div>
+          <div class="field">
+            <span>Status</span>
+            <strong id="memberStatus">—</strong>
+          </div>
+        </div>
+
+        <div id="message" class="message">
+          Please wait while we verify this membership.
+        </div>
+
+        <div class="security-note">
+          Always confirm the Member ID shown here matches the physical card.
+        </div>
+
+        <div class="footer">
+          <span>IMC Esports Club</span>
+          <span id="checkedAt"></span>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="members.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
