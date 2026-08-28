@@ -1,1 +1,89 @@
-(()=>{const g=x=>document.getElementById(x),id=(new URLSearchParams(location.search).get("id")||"").trim().toUpperCase(),m=IMC_MEMBERS[id];g("id").textContent=id||"—";if(!m){g("title").textContent="Invalid Verification Link";g("badge").textContent="✕ INVALID MEMBER";g("badge").className="badbadge";g("message").textContent=id?"Member ID not found in IMC database.":"This link does not contain a Member ID.";g("message").className="message bad";return}g("name").textContent=m.name;g("role").textContent=m.role;g("status").textContent=m.status;let active=(m.status||"").toUpperCase()==="ACTIVE";g("title").textContent=active?"Official Member Verified":"Membership Not Active";g("badge").textContent=active?"✓ VERIFIED MEMBER":"✕ NOT ACTIVE";if(!active)g("badge").className="badbadge";g("message").innerHTML=active?"This membership is currently <b>ACTIVE</b> and verified by IMC Esports Club.":`This membership is currently <b>${m.status}</b>.`;if(!active)g("message").className="message bad"})();
+(() => {
+  const g = (id) => document.getElementById(id);
+
+  const memberId = (
+    new URLSearchParams(location.search).get("id") || ""
+  ).trim().toUpperCase();
+
+  const member = IMC_MEMBERS[memberId];
+
+  const badge = g("badge");
+  const title = g("title");
+  const message = g("message");
+  const card = document.querySelector(".card");
+
+  g("id").textContent = memberId || "—";
+
+  /* Start scanner */
+  if (card) {
+    card.classList.add("scanning");
+  }
+
+  /* Initial checking state */
+  badge.textContent = "● CHECKING MEMBER";
+  title.textContent = "Verifying Membership...";
+
+  /* Wait for scan animation */
+  setTimeout(() => {
+
+    if (card) {
+      card.classList.remove("scanning");
+    }
+
+    /* Invalid member */
+    if (!member) {
+
+      title.textContent = "Invalid Verification Link";
+
+      badge.textContent = "✕ INVALID MEMBER";
+      badge.className = "badbadge";
+
+      message.textContent = memberId
+        ? "Member ID not found in IMC database."
+        : "This link does not contain a Member ID.";
+
+      message.className = "message bad";
+
+      return;
+    }
+
+    /* Load member information */
+    g("name").textContent = member.name;
+    g("role").textContent = member.role;
+    g("status").textContent = member.status;
+
+    const active =
+      (member.status || "").toUpperCase() === "ACTIVE";
+
+    /* ACTIVE MEMBER */
+    if (active) {
+
+      title.textContent = "Official Member Verified";
+
+      title.classList.add("verified-title");
+
+      badge.textContent = "✓ VERIFIED MEMBER";
+      badge.className = "verified-glow";
+
+      message.innerHTML =
+        'This membership is currently <b>ACTIVE</b> and verified by IMC Esports Club.';
+
+    }
+
+    /* INACTIVE / REVOKED */
+    else {
+
+      title.textContent = "Membership Not Active";
+
+      badge.textContent = "✕ NOT ACTIVE";
+      badge.className = "badbadge";
+
+      message.innerHTML =
+        `This membership is currently <b>${member.status}</b>.`;
+
+      message.className = "message bad";
+    }
+
+  }, 1400);
+
+})();
