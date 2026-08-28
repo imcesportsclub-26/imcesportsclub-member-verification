@@ -401,10 +401,10 @@
 
 @media (max-width: 620px) {
   .hero h3 {
-    margin-bottom: 8px !important;
+    margin-bottom: 0 !important;
   }
 
   .card {
-    margin-top: 18px !important;
+    margin-top: 30px !important;
   }
 }
