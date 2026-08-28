@@ -62,3 +62,65 @@
   }
 }
 
+/* ===== IMC PURPLE VERIFY EFFECT ===== */
+
+.card {
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.card.verified-card {
+  animation: imcCardVerify .7s ease-out;
+  box-shadow:
+    0 8px 30px rgba(70, 35, 190, .20),
+    0 0 25px rgba(123, 88, 232, .25);
+}
+
+@keyframes imcCardVerify {
+  0% {
+    transform: scale(.97);
+    opacity: .7;
+  }
+
+  55% {
+    transform: scale(1.015);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Member information reveal */
+
+.card.verified-card .grid > div {
+  animation: imcInfoReveal .5s ease-out both;
+}
+
+.card.verified-card .grid > div:nth-child(1) {
+  animation-delay: .08s;
+}
+
+.card.verified-card .grid > div:nth-child(2) {
+  animation-delay: .16s;
+}
+
+.card.verified-card .grid > div:nth-child(3) {
+  animation-delay: .24s;
+}
+
+.card.verified-card .grid > div:nth-child(4) {
+  animation-delay: .32s;
+}
+
+@keyframes imcInfoReveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
