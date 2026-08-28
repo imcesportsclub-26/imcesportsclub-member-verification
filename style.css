@@ -114,3 +114,49 @@
     animation: none !important;
   }
 }
+/* Greenline effect on mobile view */
+@media (max-width: 620px) {
+  .card::after {
+    height: 4px;
+    left: 2%;
+    width: 96%;
+
+    background: linear-gradient(
+      90deg,
+      transparent,
+      #ffffff,
+      #31ef67,
+      #ffffff,
+      transparent
+    );
+
+    box-shadow:
+      0 0 10px #31ef67,
+      0 0 20px #31ef67,
+      0 0 30px rgba(49, 239, 103, 0.9);
+  }
+
+  .card.scanning::after {
+    animation: imcScanMobile 1.8s linear;
+  }
+
+  @keyframes imcScanMobile {
+    0% {
+      top: 0;
+      opacity: 0;
+    }
+
+    8% {
+      opacity: 1;
+    }
+
+    92% {
+      opacity: 1;
+    }
+
+    100% {
+      top: 100%;
+      opacity: 0;
+    }
+  }
+}
