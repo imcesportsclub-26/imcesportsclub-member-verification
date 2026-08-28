@@ -11,6 +11,12 @@ const IMC_MEMBERS = {
     status: "ACTIVE"
   },
    
+     "IMC-006": {
+    name: "Sai Thura Sai",
+    role: "Board Member",
+    status: "ACTIVE"
+  },
+   
    "IMC-008": {
     name: "Toe Wai Hlaing",
     role: "Admin",
