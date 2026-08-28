@@ -37,58 +37,6 @@
   overflow: hidden;
 }
 
-/* Scanner line */
-.card::after {
-  content: "";
-  position: absolute;
-  left: 3%;
-  width: 94%;
-  height: 2px;
-  top: -5px;
-
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #dce600,
-    #31ef67,
-    #dce600,
-    transparent
-  );
-
-  box-shadow:
-    0 0 8px #31ef67,
-    0 0 15px rgba(49, 239, 103, 0.7);
-
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* Scanner only runs when checking */
-.card.scanning::after {
-  opacity: 1;
-  animation: imcScan 1.4s ease-in-out;
-}
-
-@keyframes imcScan {
-  0% {
-    top: 0%;
-    opacity: 0;
-  }
-
-  10% {
-    opacity: 1;
-  }
-
-  90% {
-    opacity: 1;
-  }
-
-  100% {
-    top: 100%;
-    opacity: 0;
-  }
-}
-
 /* Verified title reveal */
 #title.verified-title {
   animation: verifiedReveal 0.55s ease-out;
@@ -109,54 +57,8 @@
 /* Respect accessibility settings */
 @media (prefers-reduced-motion: reduce) {
   #badge,
-  #title,
-  .card::after {
+  #title,{
     animation: none !important;
   }
 }
-/* Greenline effect on mobile view */
-@media (max-width: 620px) {
-  .card::after {
-    height: 4px;
-    left: 2%;
-    width: 96%;
 
-    background: linear-gradient(
-      90deg,
-      transparent,
-      #ffffff,
-      #31ef67,
-      #ffffff,
-      transparent
-    );
-
-    box-shadow:
-      0 0 10px #31ef67,
-      0 0 20px #31ef67,
-      0 0 30px rgba(49, 239, 103, 0.9);
-  }
-
-  .card.scanning::after {
-    animation: imcScanMobile 1.8s linear;
-  }
-
-  @keyframes imcScanMobile {
-    0% {
-      top: 0;
-      opacity: 0;
-    }
-
-    8% {
-      opacity: 1;
-    }
-
-    92% {
-      opacity: 1;
-    }
-
-    100% {
-      top: 100%;
-      opacity: 0;
-    }
-  }
-}
