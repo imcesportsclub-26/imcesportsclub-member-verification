@@ -195,3 +195,68 @@
     letter-spacing: .7px;
   }
 }
+
+@media (max-width: 620px) {
+
+  header {
+    height: 58px;
+  }
+
+  .paper {
+    padding-top: 10px;
+  }
+
+  .hero img {
+    width: 125px;
+    margin-top: 8px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+    line-height: 0.95;
+    margin-top: 4px;
+  }
+
+  .hero h3 {
+    font-size: 12px;
+    margin: 12px 0 12px;
+    letter-spacing: 1px;
+  }
+
+  .card {
+    margin-top: 8px;
+  }
+
+  #title {
+    font-size: 31px;
+    line-height: 1.05;
+    margin: 4px 0 14px;
+  }
+
+  .grid {
+    gap: 8px;
+  }
+
+  .grid > div {
+    padding: 12px 15px;
+  }
+
+  .grid small {
+    font-size: 12px;
+  }
+
+  .grid b {
+    font-size: 19px;
+  }
+
+  .message {
+    margin: 10px 0;
+    padding: 11px 14px;
+    font-size: 15px;
+  }
+
+  .motto {
+    margin-top: 12px;
+    margin-bottom: 4px;
+  }
+}
