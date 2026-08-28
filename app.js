@@ -84,6 +84,6 @@
       message.className = "message bad";
     }
 
-  }, 1400);
+  }, 1800);
 
 })();
