@@ -124,3 +124,74 @@
     transform: translateY(0);
   }
 }
+
+@media (max-width: 620px) {
+
+  /* Main card compact */
+  .card {
+    padding: 14px 12px;
+    border-radius: 18px;
+  }
+
+  /* Verified title smaller */
+  #title {
+    font-size: 34px;
+    line-height: 1.05;
+    margin: 8px 0 18px;
+  }
+
+  /* Member info cards shorter */
+  .grid {
+    gap: 10px;
+  }
+
+  .grid > div {
+    padding: 16px 18px;
+    min-height: auto;
+    border-radius: 15px;
+  }
+
+  .grid small {
+    font-size: 13px;
+  }
+
+  .grid b {
+    font-size: 20px;
+    margin-top: 5px;
+  }
+
+  /* Active message compact */
+  .message {
+    padding: 14px 16px;
+    font-size: 16px;
+    line-height: 1.35;
+    margin: 14px 0;
+  }
+
+  /* Long information section compact */
+  article {
+    padding: 18px 16px;
+    border-radius: 16px;
+  }
+
+  article h4 {
+    font-size: 17px;
+    margin: 14px 0 6px;
+  }
+
+  article h4:first-child {
+    margin-top: 0;
+  }
+
+  article p {
+    font-size: 15px;
+    line-height: 1.45;
+    margin: 0 0 10px;
+  }
+
+  .motto {
+    margin-top: 18px;
+    font-size: 10px;
+    letter-spacing: .7px;
+  }
+}
