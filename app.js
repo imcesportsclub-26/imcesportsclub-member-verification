@@ -14,21 +14,12 @@
 
   g("id").textContent = memberId || "—";
 
-  /* Start scanner */
-  if (card) {
-    card.classList.add("scanning");
-  }
-
   /* Initial checking state */
   badge.textContent = "● CHECKING MEMBER";
   title.textContent = "Verifying Membership...";
 
-  /* Wait for scan animation */
+  /* Verification delay */
   setTimeout(() => {
-
-    if (card) {
-      card.classList.remove("scanning");
-    }
 
     /* Invalid member */
     if (!member) {
@@ -57,7 +48,8 @@
 
     /* ACTIVE MEMBER */
     if (active) {
-
+      
+      card?.classList.add("verified-card");
       title.textContent = "Official Member Verified";
 
       title.classList.add("verified-title");
@@ -84,6 +76,6 @@
       message.className = "message bad";
     }
 
-  }, 1800);
+  }, 500);
 
 })();
