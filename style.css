@@ -366,3 +366,35 @@
     line-height: 1.5;
   }
 }
+
+@media (max-width: 620px) {
+
+  .hero {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .hero img {
+    width: 85px !important;
+    height: auto !important;
+    max-height: 90px !important;
+    margin: 0 auto 2px !important;
+  }
+
+  .hero h1 {
+    font-size: 32px !important;
+    line-height: .9 !important;
+    margin: 2px 0 6px !important;
+  }
+
+  .hero h3 {
+    font-size: 9px !important;
+    line-height: 1.1 !important;
+    letter-spacing: .4px !important;
+    margin: 6px 0 8px !important;
+  }
+
+  .card {
+    margin-top: 4px !important;
+  }
+}
