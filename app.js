@@ -76,6 +76,6 @@
       message.className = "message bad";
     }
 
-  }, 7000);
+  }, 700);
 
 })();
